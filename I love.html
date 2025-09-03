@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You and me ❤</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 3em;
+      color: #d6336c;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    #contador {
+      font-size: 2em;
+      margin: 20px 0;
+      font-weight: bold;
+      color: #b3005e;
+    }
+
+    .texto {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1.3em;
+      line-height: 1.8;
+      font-style: italic;
+      padding: 0 15px;
+    }
+
+    .fotos {
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .fotos img {
+      width: 220px;
+      height: auto;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      border: 3px solid #fff;
+    }
+
+    .qrcode {
+      margin: 40px 0;
+    }
+
+    .qrcode p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #b3005e;
+    }
+
+    footer {
+      margin: 40px 0;
+      font-size: 0.9em;
+      color: #fff;
+      background: rgba(0,0,0,0.2);
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    /* Animação dos corações */
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 20px;
+      color: #ff4d6d;
+      animation: fall 6s linear infinite;
+      z-index: 999;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    /* Responsividade para celular */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2em;
+        margin: 20px 0;
+      }
+
+      #contador {
+        font-size: 1.4em;
+      }
+
+      .texto {
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      .fotos img {
+        width: 150px;
+        margin: 8px;
+      }
+
+      .qrcode img {
+        width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>You and me ❤</h1>
+
+  <div id="contador"></div>
+
+  <div class="texto">
+    <p>
+      Minha princesa, dizem que o amor não se sente, se vive e eu amo viver com você, sempre soube que era você, nos separamos mas Deus tinha um plano para a gente, eu amo você, amo a gente e quero isso para sempre, quero você como minha parceira de vida. 
+      Cada sorriso seu ilumina meu mundo e cada abraço seu é meu lugar favorito.  
+      Eu te amo hoje e sempre, e esse cantinho é para gente se lembrar que temos um ao outro. 💕
+    </p>
+  </div>
+
+  <div class="fotos">
+    <img src="foto1.jpg" alt="Minha parceira, juninho play">
+    <img src="foto2.jpg" alt="Momento eu e você">
+    <img src="foto3.jpg" alt="Cozinhando para mim">
+    <img src="foto4.jpg" alt="Reescrevendo nossa história">
+  </div>
+
+  <div class="qrcode">
+    <p>Escaneie e ouça a nossa música 🎶</p>
+    <img src="qrcode.png" alt="QR Code da música" width="160">
+  </div>
+
+  <footer>
+    Feito com ❤ por seu gatinho só para você, minha princesa.
+  </footer>
+
+  <script>
+    // Contador de dias
+    const dataInicio = new Date("2025-04-19"); // coloque a data do namoro
+    function atualizarContador() {
+      const hoje = new Date();
+      const diff = hoje - dataInicio;
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("contador").innerText =
+        "Estamos juntos há " + dias + " dias 💕";
+    }
+    atualizarContador();
+
+    // Corações caindo
+    function criarCoracao() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+    setInterval(criarCoracao, 500);
+  </script>
+
+</body>
+</html>
